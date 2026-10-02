@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book a demo | Baseline</title>
+<meta name="description" content="Book a walkthrough of Baseline.">
+<link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html" aria-label="Baseline home"><img src="assets/img/logo.svg" width="30" height="30" alt="">Baseline</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <nav id="nav-links" class="nav-links" aria-label="Primary">
+      <a href="product.html">Product</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="trust.html">Trust</a>
+      <a class="btn btn-p" href="contact.html" aria-current="page">Book a demo</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="phead">
+  <div class="wrap phead-in">
+    <div>
+      <h1>Book a demo</h1>
+      <p class="lede">Tell us a little about your team, and we’ll be in touch to set up a walkthrough.</p>
+    </div>
+    <div class="tblk" aria-hidden="true">
+      <div class="wide"><span>Title</span><b>Contact</b></div>
+      <div><span>Sheet</span><b>5 of 5</b></div>
+      <div><span>Status</span><b>Open</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap contact">
+    <div>
+      <h2>What to expect</h2>
+      <ul class="expect">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8 12.3l2.8 2.8 5.2-5.6"/></svg>A walkthrough of Baseline on example assemblies</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8 12.3l2.8 2.8 5.2-5.6"/></svg>A conversation about the PDM and ERP your team uses</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8 12.3l2.8 2.8 5.2-5.6"/></svg>Nothing to install or connect for the demo</li>
+      </ul>
+    </div>
+
+    <form class="form bolted" id="demo-form" novalidate>
+      <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required><p class="err" id="e-name"></p></div>
+      <div class="field"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" required><p class="err" id="e-email"></p></div>
+      <div class="field"><label for="f-co">Company</label><input id="f-co" name="company" autocomplete="organization"></div>
+      <div class="field"><label for="f-sys">PDM and ERP you use <span class="opt">optional</span></label><input id="f-sys" name="systems"></div>
+      <div class="field"><label for="f-msg">Anything else <span class="opt">optional</span></label><textarea id="f-msg" name="message"></textarea></div>
+      <button class="btn btn-p btn-lg" type="submit">Book a demo</button>
+      <p class="form-ok" id="form-ok" role="status" hidden></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="tblock">
+      <div class="tb-brand"><strong><img src="assets/img/logo-light.svg" width="28" height="28" alt="">Baseline</strong><span>Keeps engineering and purchasing records in step.</span></div>
+      <nav aria-label="Site"><span class="tb-label">Sheets</span>
+        <div class="sheets"><a href="index.html"><span>1</span>Home</a><a href="product.html"><span>2</span>Product</a><a href="how-it-works.html"><span>3</span>How it works</a><a href="trust.html"><span>4</span>Trust</a><a href="contact.html" aria-current="page"><span>5</span>Contact</a></div>
+      </nav>
+      <div class="tb-meta"><div><span>Sheet</span>5 of 5</div><div><span>Date</span><b class="year">2026</b></div></div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "baseline-site",
+      "runtimeExecutable": "C:\\Users\\ACER\\AppData\\Local\\Programs\\nodejs\\node.exe",
+      "runtimeArgs": ["baseline-website/serve.js"],
+      "port": 5173
+    }
+  ]
+}
