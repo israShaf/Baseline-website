@@ -69,7 +69,7 @@ if (shots.length && stage) {
 // Footer date
 document.querySelectorAll('.year').forEach(el => { el.textContent = new Date().getFullYear(); });
 
-// Demo form: client-side validation only. Connect the submit handler to your CRM or form service.
+// Demo form: checked here, then sent to Netlify Forms (the form carries data-netlify in contact.html)
 const form = document.getElementById('demo-form');
 if (form) {
   const ok = document.getElementById('form-ok');
@@ -87,8 +87,23 @@ if (form) {
     const v2 = check(email, 'e-email', email.value ? 'Enter a work email like name@company.com.' : 'Enter your work email.');
     if (!v1) return name.focus();
     if (!v2) return email.focus();
-    ok.hidden = false;
-    ok.textContent = `Request received. We’ll email ${email.value} to set a time.`;
-    form.querySelector('button[type=submit]').disabled = true;
+    const button = form.querySelector('button[type=submit]');
+    button.disabled = true;
+    button.textContent = 'Sending…';
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(form)).toString()
+    }).then(res => {
+      if (!res.ok) throw new Error(res.status);
+      ok.hidden = false;
+      ok.textContent = `Request received. We’ll email ${email.value} to set a time.`;
+      button.textContent = 'Request sent';
+    }).catch(() => {
+      ok.hidden = false;
+      ok.textContent = 'Your request didn’t go through. Check your connection and try again.';
+      button.disabled = false;
+      button.textContent = 'Book a demo';
+    });
   });
 }

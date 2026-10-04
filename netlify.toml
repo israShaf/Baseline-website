@@ -1,0 +1,4 @@
+# Netlify: publish the static site folder as-is (no build step)
+[build]
+  publish = "baseline-website"
+  command = ""

@@ -54,7 +54,9 @@
       </ul>
     </div>
 
-    <form class="form bolted" id="demo-form" novalidate>
+    <form class="form bolted" id="demo-form" name="demo-request" method="POST" data-netlify="true" netlify-honeypot="company-site" novalidate>
+      <input type="hidden" name="form-name" value="demo-request">
+      <p hidden><label>Leave this empty <input name="company-site" tabindex="-1" autocomplete="off"></label></p>
       <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required><p class="err" id="e-name"></p></div>
       <div class="field"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" required><p class="err" id="e-email"></p></div>
       <div class="field"><label for="f-co">Company</label><input id="f-co" name="company" autocomplete="organization"></div>
