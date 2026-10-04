@@ -44,14 +44,13 @@
 </section>
 
 <section class="shots">
-  <div class="wrap">
-    <article class="shot shot-a">
+  <div class="wrap shots-in">
+    <article class="shot" id="shot-dashboard" data-path="Baseline / Dashboard">
       <div class="shot-copy">
         <h2>See what needs attention</h2>
         <p>The dashboard ranks open mismatches by urgency, starting with the part whose order goes out soonest.</p>
       </div>
       <div class="shot-media">
-        <span class="shot-block" aria-hidden="true"></span>
         <div class="plate bolted">
           <div class="frame">
             <div class="frame-bar" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span>Baseline / Dashboard</span></div>
@@ -61,13 +60,12 @@
       </div>
     </article>
 
-    <article class="shot shot-b shot-r">
+    <article class="shot" id="shot-alert" data-path="Baseline / Alerts / BL-101">
       <div class="shot-copy">
         <h2>Understand each mismatch</h2>
         <p>Every alert shows what differs, why it happened, where it sits in the assembly, and the next step Baseline recommends.</p>
       </div>
       <div class="shot-media">
-        <span class="shot-block" aria-hidden="true"></span>
         <div class="plate bolted">
           <div class="frame">
             <div class="frame-bar" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span>Baseline / Alerts / BL-101</span></div>
@@ -77,13 +75,12 @@
       </div>
     </article>
 
-    <article class="shot shot-c">
+    <article class="shot" id="shot-compare" data-path="Baseline / Compare">
       <div class="shot-copy">
         <h2>Compare any two BOMs</h2>
         <p>Put two bills of materials side by side, from PDM, ERP or a spreadsheet, and see exactly what changed.</p>
       </div>
       <div class="shot-media">
-        <span class="shot-block" aria-hidden="true"></span>
         <div class="plate bolted">
           <div class="frame">
             <div class="frame-bar" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span>Baseline / Compare</span></div>
@@ -92,6 +89,22 @@
         </div>
       </div>
     </article>
+
+    <!-- Desktop: one plate stays put while the copy scrolls past; the screen is rescanned for each section -->
+    <div class="stage" aria-hidden="true">
+      <div class="stage-plate bolted">
+        <div class="frame">
+          <div class="frame-bar"><span class="dots"><i></i><i></i><i></i></span><span class="stage-path">Baseline / Dashboard</span></div>
+          <div class="stage-screens">
+            <img class="on" src="assets/img/screens/dashboard.png" width="2880" height="1800" alt="">
+            <img src="assets/img/screens/alert-detail.png" width="2880" height="1800" alt="">
+            <img src="assets/img/screens/compare.png" width="2880" height="1800" alt="">
+            <span class="scan"></span>
+          </div>
+        </div>
+        <div class="stage-dial"><span class="on"><i></i>Dashboard</span><span><i></i>Alert</span><span><i></i>Compare</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -110,7 +123,7 @@
 <footer class="foot">
   <div class="wrap">
     <div class="tblock">
-      <div class="tb-brand"><strong><img src="assets/img/logo-light.svg" width="28" height="28" alt="">Baseline</strong><span>Keeps engineering and purchasing records in step.</span></div>
+      <div class="tb-brand"><strong><img src="assets/img/logo.svg" width="28" height="28" alt="">Baseline</strong><span>Keeps engineering and purchasing records in step.</span></div>
       <nav aria-label="Site"><span class="tb-label">Sheets</span>
         <div class="sheets"><a href="index.html"><span>1</span>Home</a><a href="product.html" aria-current="page"><span>2</span>Product</a><a href="how-it-works.html"><span>3</span>How it works</a><a href="trust.html"><span>4</span>Trust</a><a href="contact.html"><span>5</span>Contact</a></div>
       </nav>

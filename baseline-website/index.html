@@ -125,12 +125,12 @@
         <p class="win-cap cap-bl"><img src="assets/img/logo.svg" width="16" height="16" alt="">Resolved in Baseline</p>
         <div class="win win-bl">
           <div class="win-bar bw"><span class="dots"><i></i><i></i><i></i></span><span class="bw-url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="6" y="11" width="12" height="9" rx="2"/><path d="M8.5 11V8.5a3.5 3.5 0 0 1 7 0V11"/></svg>baseline / alerts</span></div>
-          <div class="bl-top"><img src="assets/img/logo-light.svg" width="20" height="20" alt="">Baseline</div>
+          <div class="bl-top"><img src="assets/img/logo.svg" width="20" height="20" alt="">Baseline</div>
           <div class="bl-body">
             <p class="bl-wait"><span class="spin"></span>Reading PDM and ERP…</p>
             <div class="bl-alert">
               <p class="bl-crumb">Alerts / <span class="pn">BL-101</span></p>
-              <h4>Cap screw M8×40: quantity differs <span class="new">New</span></h4>
+              <p class="bl-title">Cap screw M8×40: quantity differs <span class="new">New</span></p>
               <div class="bl-stats">
                 <div><span>PDM qty, Rev C</span><b>4</b></div>
                 <div class="st-erp"><span>ERP qty, Rev B</span><b>2</b></div>
@@ -139,7 +139,7 @@
               <div class="bl-rec">
                 <span class="bl-k">Recommended next step</span>
                 <p>The change was approved but ERP wasn’t updated. Email the supply team to update it before the next order.</p>
-                <div class="bl-btns"><span class="btn btn-p btn-sm">Prepare email to supply team</span><span class="btn btn-sm">Accept as intentional</span></div>
+                <div class="bl-btns"><span class="mock-btn mock-p">Prepare email to supply team</span><span class="mock-btn">Accept as intentional</span></div>
               </div>
             </div>
           </div>
@@ -151,47 +151,85 @@
 
 <div class="cl-rule" aria-hidden="true"></div>
 
-<section class="sec">
+<section class="sec rack-sec">
   <div class="wrap">
-    <p class="statement">Every release in PDM should reach ERP intact. When it doesn’t, Baseline notices, explains what happened, and helps your team put it right before the wrong parts are ordered.</p>
-    <div class="pillars">
-      <div class="pillar">
-        <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="10" width="22" height="22" rx="2"/><rect x="20" y="16" width="22" height="22" rx="2" stroke-dasharray="4 3"/><path d="M31 8v6M28 11h6"/></svg>
-        <h3>Notice</h3>
-        <p>It compares design and purchasing records on its own, so drift is caught early.</p>
-      </div>
-      <div class="pillar">
-        <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 40V10h8v30M16 16h6M16 22h4M16 28h6M16 34h4"/><circle cx="32" cy="22" r="8"/><path d="M38 28l5 5"/></svg>
-        <h3>Explain</h3>
-        <p>It finds the reason, and tells the right person what to do next.</p>
-      </div>
-      <div class="pillar">
-        <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 5l16 9.25v18.5L24 42 8 32.75v-18.5z"/><path d="M17 24l5 5 9-10"/></svg>
-        <h3>Resolve</h3>
-        <p>It follows through until your systems agree again, with people in charge of every step.</p>
-      </div>
+    <h2 class="statement">Every release in PDM should reach ERP intact. When it doesn’t, Baseline notices, explains what happened, and helps your team put it right before the wrong parts are ordered.</h2>
+
+    <!-- Three modules clipped onto one DIN rail: Baseline as a unit in your systems cabinet -->
+    <div class="rack">
+      <article class="mod">
+        <div class="mod-term" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="mod-face">
+          <div class="mod-plate"><h3>Notice</h3><span class="led led-amber" aria-hidden="true"></span></div>
+          <div class="readout" aria-hidden="true">
+            <div><span>PDM · Rev C</span><b>4</b></div>
+            <div class="ro-diff"><span>ERP · Rev B</span><b>2</b></div>
+          </div>
+          <p>It compares design and purchasing records on its own, so drift is caught early.</p>
+        </div>
+        <div class="mod-term" aria-hidden="true"><i></i><i></i><i></i></div>
+      </article>
+      <article class="mod">
+        <div class="mod-term" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="mod-face">
+          <div class="mod-plate"><h3>Explain</h3><span class="led" aria-hidden="true"></span></div>
+          <div class="readout" aria-hidden="true">
+            <div><span>Cause</span><b>ERP not updated</b></div>
+            <div><span>Owner</span><b>Supply team</b></div>
+          </div>
+          <p>It finds the reason, and tells the right person what to do next.</p>
+        </div>
+        <div class="mod-term" aria-hidden="true"><i></i><i></i><i></i></div>
+      </article>
+      <article class="mod">
+        <div class="mod-term" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="mod-face">
+          <div class="mod-plate"><h3>Resolve</h3><span class="led" aria-hidden="true"></span></div>
+          <div class="readout" aria-hidden="true">
+            <div><span>PDM · Rev C</span><b>4</b></div>
+            <div class="ro-ok"><span>ERP · Rev C</span><b>4</b></div>
+          </div>
+          <p>It follows through until your systems agree again, with people in charge of every step.</p>
+        </div>
+        <div class="mod-term" aria-hidden="true"><i></i><i></i><i></i></div>
+      </article>
     </div>
   </div>
 </section>
 
-<section class="sec" style="padding-top:0">
-  <div class="wrap glimpse">
-    <div class="glimpse-copy">
+<section class="sec glimpse-sec">
+  <div class="wrap">
+    <div class="glimpse-head">
       <h2>One place for what needs a decision</h2>
-      <p>Your team opens Baseline and sees which parts disagree, how urgent each one is, and what to do about it.</p>
-      <a class="btn" href="product.html">See the product</a>
+      <div class="glimpse-copy">
+        <p>Your team opens Baseline and sees which parts disagree, how urgent each one is, and what to do about it.</p>
+        <a class="btn" href="product.html">See the product</a>
+      </div>
     </div>
-    <div class="plate bolted">
-      <img src="assets/img/screens/dashboard.png" width="2880" height="1800" loading="lazy" alt="Baseline dashboard showing three parts that need a decision, with the bearing housing listed first because its purchase order releases in three days.">
-    </div>
+    <figure class="mount bolted">
+      <span class="tag-plate" aria-hidden="true">Baseline / Dashboard</span>
+      <div class="mount-crop">
+        <img src="assets/img/screens/dashboard.png" width="2880" height="1800" loading="lazy" alt="Baseline dashboard showing three parts that need a decision, with the bearing housing listed first because its purchase order releases in three days.">
+      </div>
+    </figure>
   </div>
 </section>
 
-<section class="trust-strip">
-  <div class="wrap trust-in">
-    <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></svg>Read-only in PDM and ERP</p>
-    <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8 12.3l2.8 2.8 5.2-5.6"/></svg>People approve every message it sends</p>
-    <a href="trust.html">How we keep your systems safe</a>
+<section class="rating-sec">
+  <div class="wrap">
+    <!-- An equipment rating plate, riveted on: the safety facts as stamped fields -->
+    <div class="rating">
+      <div class="rt-brand"><img src="assets/img/logo.svg" width="26" height="26" alt="">Baseline</div>
+      <div class="rt-field">
+        <span class="rt-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></svg>Access</span>
+        <p>Read-only in PDM and ERP</p>
+      </div>
+      <div class="rt-field">
+        <span class="rt-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8 12.3l2.8 2.8 5.2-5.6"/></svg>Messages</span>
+        <p>People approve every message it sends</p>
+      </div>
+      <a class="rt-link" href="trust.html">How we keep your systems safe<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
   </div>
 </section>
 
@@ -210,7 +248,7 @@
 <footer class="foot">
   <div class="wrap">
     <div class="tblock">
-      <div class="tb-brand"><strong><img src="assets/img/logo-light.svg" width="28" height="28" alt="">Baseline</strong><span>Keeps engineering and purchasing records in step.</span></div>
+      <div class="tb-brand"><strong><img src="assets/img/logo.svg" width="28" height="28" alt="">Baseline</strong><span>Keeps engineering and purchasing records in step.</span></div>
       <nav aria-label="Site"><span class="tb-label">Sheets</span>
         <div class="sheets"><a href="index.html" aria-current="page"><span>1</span>Home</a><a href="product.html"><span>2</span>Product</a><a href="how-it-works.html"><span>3</span>How it works</a><a href="trust.html"><span>4</span>Trust</a><a href="contact.html"><span>5</span>Contact</a></div>
       </nav>
