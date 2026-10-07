@@ -21,7 +21,6 @@
     <nav id="nav-links" class="nav-links" aria-label="Primary">
       <a href="product.html" aria-current="page">Product</a>
       <a href="how-it-works.html">How it works</a>
-      <a href="trust.html">Trust</a>
       <a class="btn btn-p" href="contact.html">Book a demo</a>
     </nav>
   </div>
@@ -29,81 +28,56 @@
 
 <main id="main">
 
-<section class="phead">
+<section class="phead phead-sm">
   <div class="wrap phead-in">
-    <div>
-      <h1>An agent for the handoff between design and purchasing</h1>
-      <p class="lede">Baseline reads your PDM and ERP, spots where they disagree, and brings each difference to the person who can fix it.</p>
-    </div>
-    <div class="tblk" aria-hidden="true">
-      <div class="wide"><span>Title</span><b>Product</b></div>
-      <div><span>Sheet</span><b>2 of 5</b></div>
-      <div><span>Scale</span><b>1:1</b></div>
-    </div>
+    <h1>A look inside Baseline</h1>
   </div>
 </section>
 
-<section class="shots">
-  <div class="wrap shots-in">
-    <article class="shot" id="shot-dashboard" data-path="Baseline / Dashboard">
-      <div class="shot-copy">
+<!-- Desktop: the deck pins under the header and each scroll step plays the next slide in -->
+<section class="deck" data-slide="1">
+  <div class="deck-pin">
+    <div class="wrap deck-in">
+    <article class="slide on" data-tint="1">
+      <div class="slide-copy">
+        <p class="slide-k"><span>01</span>Dashboard</p>
         <h2>See what needs attention</h2>
-        <p>The dashboard ranks open mismatches by urgency, starting with the part whose order goes out soonest.</p>
+        <p>Open mismatches, ranked by urgency.</p>
       </div>
-      <div class="shot-media">
-        <div class="plate bolted">
-          <div class="frame">
-            <div class="frame-bar" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span>Baseline / Dashboard</span></div>
-            <img src="assets/img/screens/dashboard.png" width="2880" height="1800" alt="Baseline dashboard with open alerts, a fix-first list, and charts of alerts by severity and status.">
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <article class="shot" id="shot-alert" data-path="Baseline / Alerts / BL-101">
-      <div class="shot-copy">
-        <h2>Understand each mismatch</h2>
-        <p>Every alert shows what differs, why it happened, where it sits in the assembly, and the next step Baseline recommends.</p>
-      </div>
-      <div class="shot-media">
-        <div class="plate bolted">
-          <div class="frame">
-            <div class="frame-bar" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span>Baseline / Alerts / BL-101</span></div>
-            <img src="assets/img/screens/alert-detail.png" width="2880" height="1800" loading="lazy" alt="An alert for a stainless steel bearing housing: the design needs 4, ERP has 2. Baseline recommends emailing the supply team.">
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <article class="shot" id="shot-compare" data-path="Baseline / Compare">
-      <div class="shot-copy">
-        <h2>Compare any two BOMs</h2>
-        <p>Put two bills of materials side by side, from PDM, ERP or a spreadsheet, and see exactly what changed.</p>
-      </div>
-      <div class="shot-media">
-        <div class="plate bolted">
-          <div class="frame">
-            <div class="frame-bar" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span>Baseline / Compare</span></div>
-            <img src="assets/img/screens/compare.png" width="2880" height="1800" loading="lazy" alt="A side-by-side BOM comparison with changed rows highlighted in amber and a removed row in red.">
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <!-- Desktop: one plate stays put while the copy scrolls past; the screen is rescanned for each section -->
-    <div class="stage" aria-hidden="true">
-      <div class="stage-plate bolted">
+      <div class="slide-shot plate bolted">
         <div class="frame">
-          <div class="frame-bar"><span class="dots"><i></i><i></i><i></i></span><span class="stage-path">Baseline / Dashboard</span></div>
-          <div class="stage-screens">
-            <img class="on" src="assets/img/screens/dashboard.png" width="2880" height="1800" alt="">
-            <img src="assets/img/screens/alert-detail.png" width="2880" height="1800" alt="">
-            <img src="assets/img/screens/compare.png" width="2880" height="1800" alt="">
-            <span class="scan"></span>
-          </div>
+          <div class="frame-bar" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span>Baseline / Dashboard</span></div>
+          <img src="assets/img/screens/dashboard.png" width="2880" height="1800" alt="Baseline dashboard with open alerts, a fix-first list, and charts of alerts by severity and status.">
         </div>
-        <div class="stage-dial"><span class="on"><i></i>Dashboard</span><span><i></i>Alert</span><span><i></i>Compare</span></div>
       </div>
+    </article>
+    <article class="slide" data-tint="2">
+      <div class="slide-copy">
+        <p class="slide-k"><span>02</span>Alert</p>
+        <h2>Understand each mismatch</h2>
+        <p>What differs, why, and the next step.</p>
+      </div>
+      <div class="slide-shot plate bolted">
+        <div class="frame">
+          <div class="frame-bar" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span>Baseline / Alert</span></div>
+          <img src="assets/img/screens/alert-detail.png" width="2880" height="1800" alt="An alert for a stainless steel bearing housing: the design needs 4, ERP has 2. Baseline recommends emailing the supply team.">
+        </div>
+      </div>
+    </article>
+    <article class="slide" data-tint="3">
+      <div class="slide-copy">
+        <p class="slide-k"><span>03</span>Compare</p>
+        <h2>Compare any two BOMs</h2>
+        <p>Side by side, from PDM, ERP or a spreadsheet.</p>
+      </div>
+      <div class="slide-shot plate bolted">
+        <div class="frame">
+          <div class="frame-bar" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span>Baseline / Compare</span></div>
+          <img src="assets/img/screens/compare.png" width="2880" height="1800" alt="A side-by-side BOM comparison with changed rows highlighted in amber and a removed row in red.">
+        </div>
+      </div>
+    </article>
+      <div class="deck-dots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
     </div>
   </div>
 </section>
@@ -112,7 +86,6 @@
   <div class="wrap">
     <div class="cta-plate bolted bolted-dark">
       <h2>There’s more to see in a walkthrough</h2>
-      <p>We’ll show you the full product and talk through how your team works today.</p>
       <div class="cta-row"><a class="btn btn-mint btn-lg" href="contact.html">Book a demo</a></div>
     </div>
   </div>
@@ -121,15 +94,24 @@
 </main>
 
 <footer class="foot">
-  <div class="wrap">
-    <div class="tblock">
-      <div class="tb-brand"><strong><img src="assets/img/logo.svg" width="28" height="28" alt="">Baseline</strong><span>Keeps engineering and purchasing records in step.</span></div>
-      <nav aria-label="Site"><span class="tb-label">Sheets</span>
-        <div class="sheets"><a href="index.html"><span>1</span>Home</a><a href="product.html" aria-current="page"><span>2</span>Product</a><a href="how-it-works.html"><span>3</span>How it works</a><a href="trust.html"><span>4</span>Trust</a><a href="contact.html"><span>5</span>Contact</a></div>
-      </nav>
-      <div class="tb-meta"><div><span>Sheet</span>2 of 5</div><div><span>Date</span><b class="year">2026</b></div></div>
+  <div class="wrap foot-in">
+    <div class="foot-brand">
+      <a class="brand" href="index.html" aria-label="Baseline home"><img src="assets/img/logo.svg" width="28" height="28" alt="">Baseline</a>
+      <p>Keeps engineering and purchasing records in step.</p>
+    </div>
+    <nav class="foot-col" aria-label="Site">
+      <p class="foot-k">Pages</p>
+      <a href="product.html">Product</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="contact.html">Book a demo</a>
+    </nav>
+    <div class="foot-col">
+      <p class="foot-k">Contact</p>
+      <a href="mailto:hello@example.com">hello@example.com</a>
+      <a href="tel:+15550100000">+1 (555) 010-0000</a>
     </div>
   </div>
+  <div class="wrap foot-base"><span>© <span class="year">2026</span> Baseline</span></div>
 </footer>
 
 <script src="assets/js/main.js"></script>

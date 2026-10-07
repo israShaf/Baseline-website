@@ -9,60 +9,31 @@ toggle.addEventListener('click', () => {
   toggle.textContent = open ? 'Close' : 'Menu';
 });
 
-// Product page: one plate stays put on desktop while the copy scrolls past.
-// The section crossing the middle of the viewport is mounted, with a scanner wipe
-// that runs left to right going down the page and right to left coming back up.
-const shots = [...document.querySelectorAll('.shot')];
-const stage = document.querySelector('.stage');
-if (shots.length && stage) {
-  const screens = [...stage.querySelectorAll('.stage-screens img')];
-  const lamps = [...stage.querySelectorAll('.stage-dial span')];
-  const path = stage.querySelector('.stage-path');
-  const scan = stage.querySelector('.scan');
-  const calm = matchMedia('(prefers-reduced-motion: reduce)');
-  let current = 0, running = [];
-
-  const mount = next => {
+// Product page: the deck is 300vh tall with a pinned viewport. Scroll position only picks
+// which slide is showing; the change itself is a fixed CSS transition, so it never stutters with the wheel.
+const deck = document.querySelector('.deck');
+if (deck) {
+  const slides = [...deck.querySelectorAll('.slide')];
+  const dots = [...deck.querySelectorAll('.deck-dots i')];
+  let current = 0;
+  const show = next => {
     if (next === current) return;
-    const forward = next > current, from = screens[current], to = screens[next];
-    running.forEach(a => a.finish());
-    screens.forEach(img => img.classList.remove('going'));
-    from.classList.add('going');
-    from.classList.remove('on');
-    to.classList.add('on');
-    shots.forEach((s, i) => s.classList.toggle('on', i === next));
-    lamps.forEach((l, i) => l.classList.toggle('on', i === next));
-    path.textContent = shots[next].dataset.path;
+    slides.forEach((s, i) => {
+      s.classList.toggle('on', i === next);
+      s.classList.toggle('past', i < next);
+    });
+    dots.forEach((d, i) => d.classList.toggle('on', i === next));
+    deck.dataset.slide = next + 1;
     current = next;
-
-    const done = () => from.classList.remove('going');
-    if (calm.matches) {
-      const a = to.animate({ opacity: [0, 1] }, { duration: 180, easing: 'ease-out' });
-      a.onfinish = done;
-      running = [a];
-      return;
-    }
-    const timing = { duration: 640, easing: 'cubic-bezier(.65, 0, .35, 1)' };
-    const wipe = to.animate({ clipPath: forward ? ['inset(0 100% 0 0)', 'inset(0 0 0 0)'] : ['inset(0 0 0 100%)', 'inset(0 0 0 0)'] }, timing);
-    scan.classList.toggle('rev', !forward);
-    // The head shares the wipe's timing so the lit line sits exactly on the reveal edge, then fades
-    const head = scan.animate({ transform: [`translateX(${forward ? -100 : 100}%)`, 'translateX(0)'] }, { ...timing, fill: 'forwards' });
-    const glow = scan.animate([{ opacity: 1 }, { opacity: 1, offset: .84 }, { opacity: 0 }], { duration: 760 });
-    wipe.onfinish = done;
-    glow.onfinish = () => head.cancel();
-    running = [wipe, head, glow];
   };
-
-  // The last section whose top has passed the middle of the viewport is the one being read.
-  // Checked on scroll rather than with an observer so jumps (anchors, Home/End) land on the right screen.
   const pick = () => {
-    const mid = innerHeight / 2;
-    let next = 0;
-    shots.forEach((s, i) => { if (s.getBoundingClientRect().top <= mid) next = i; });
-    mount(next);
+    const r = deck.getBoundingClientRect();
+    const step = (r.height - innerHeight) / slides.length;
+    if (step <= 0) return show(0);
+    show(Math.max(0, Math.min(slides.length - 1, Math.floor(-r.top / step))));
   };
-  shots[0].classList.add('on');
   addEventListener('scroll', pick, { passive: true });
+  addEventListener('resize', pick);
   pick();
 }
 
