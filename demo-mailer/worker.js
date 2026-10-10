@@ -42,9 +42,9 @@ function teamEmail(d) {
 function clientEmail(d) {
   const first = oneLine(d.name).split(' ')[0];
   return {
-    subject: 'We’ve got your Baseline demo request',
-    html: `<div style="font-family:Arial,sans-serif;font-size:15px;color:#0E2B2E;line-height:1.6"><p>Hi ${esc(first)},</p><p>Thanks for booking a Baseline demo. We’ll email you shortly to set a time that works for your team.</p><p>If there’s anything you’d like us to cover, just reply to this email.</p><p>The Baseline team</p></div>`,
-    text: `Hi ${first},\n\nThanks for booking a Baseline demo. We’ll email you shortly to set a time that works for your team.\n\nIf there’s anything you’d like us to cover, just reply to this email.\n\nThe Baseline team`,
+    subject: 'We\u2019ve got your Baseline demo request',
+    html: `<div style="font-family:Arial,sans-serif;font-size:15px;color:#0E2B2E;line-height:1.6"><p>Hi ${esc(first)},</p><p>Thanks for booking a Baseline demo. We\u2019ll email you shortly to set a time that works for your team.</p><p>If there\u2019s anything you\u2019d like us to cover, just reply to this email.</p><p>The Baseline team</p></div>`,
+    text: `Hi ${first},\n\nThanks for booking a Baseline demo. We\u2019ll email you shortly to set a time that works for your team.\n\nIf there\u2019s anything you\u2019d like us to cover, just reply to this email.\n\nThe Baseline team`,
   };
 }
 
