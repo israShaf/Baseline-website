@@ -48,8 +48,8 @@
       </ul>
     </div>
 
-    <form class="form bolted" id="demo-form" name="demo-request" method="POST" data-netlify="true" netlify-honeypot="company-site" novalidate>
-      <input type="hidden" name="form-name" value="demo-request">
+    <!-- data-endpoint: the deployed demo-mailer Worker URL (see demo-mailer/README.md) -->
+    <form class="form bolted" id="demo-form" data-endpoint="https://baseline-demo-mailer.hamzasajjad159.workers.dev" novalidate>
       <p hidden><label>Leave this empty <input name="company-site" tabindex="-1" autocomplete="off"></label></p>
       <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required><p class="err" id="e-name"></p></div>
       <div class="field"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" required><p class="err" id="e-email"></p></div>
@@ -78,8 +78,7 @@
     </nav>
     <div class="foot-col">
       <p class="foot-k">Contact</p>
-      <a href="mailto:hello@example.com">hello@example.com</a>
-      <a href="tel:+15550100000">+1 (555) 010-0000</a>
+      <a href="mailto:support@baselineagent.io">support@baselineagent.io</a>
     </div>
   </div>
   <div class="wrap foot-base"><span>© <span class="year">2026</span> Baseline</span></div>

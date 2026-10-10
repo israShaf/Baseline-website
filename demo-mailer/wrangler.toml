@@ -1,0 +1,14 @@
+name = "baseline-demo-mailer"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+# Hamza's Cloudflare account (the one that manages baselineagent.io)
+account_id = "20c2b5cdc6085d68872f86e4d7adbd04"
+
+[vars]
+# Replace with your real addresses. FROM_EMAIL must use the domain verified in Resend.
+TEAM_EMAIL = "support@baselineagent.io"
+FROM_EMAIL = "Baseline <demo@baselineagent.io>"
+# Sites allowed to submit the form (add your own domain if the site moves there)
+ALLOWED_ORIGINS = "https://israshaf.github.io,https://baselineagent.io,https://www.baselineagent.io,http://localhost:5173"
+
+# The API key is a secret, set it with:  npx wrangler secret put RESEND_API_KEY

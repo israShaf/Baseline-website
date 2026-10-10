@@ -40,7 +40,7 @@ if (deck) {
 // Footer date
 document.querySelectorAll('.year').forEach(el => { el.textContent = new Date().getFullYear(); });
 
-// Demo form: checked here, then sent to Netlify Forms (the form carries data-netlify in contact.html)
+// Demo form: checked here, then sent to the demo-mailer Worker, which emails the team and the client
 const form = document.getElementById('demo-form');
 if (form) {
   const ok = document.getElementById('form-ok');
@@ -61,14 +61,14 @@ if (form) {
     const button = form.querySelector('button[type=submit]');
     button.disabled = true;
     button.textContent = 'Sending…';
-    fetch('/', {
+    fetch(form.dataset.endpoint, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(form)).toString()
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(Object.fromEntries(new FormData(form)))
     }).then(res => {
       if (!res.ok) throw new Error(res.status);
       ok.hidden = false;
-      ok.textContent = `Request received. We’ll email ${email.value} to set a time.`;
+      ok.textContent = `Request received. We’ve sent a confirmation to ${email.value}.`;
       button.textContent = 'Request sent';
     }).catch(() => {
       ok.hidden = false;

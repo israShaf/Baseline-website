@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "arial",
+        "createdAt": "2026-10-10T12:26:50.883Z",
+        "reason": "Email HTML in demo-mailer needs a web-safe font; email clients don't load web fonts"
+      }
+    ]
+  }
+}
